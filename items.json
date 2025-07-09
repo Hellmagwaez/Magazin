@@ -1,7 +1,14 @@
 [
-  { "name": "Алмазный меч", "price": 150, "amount": 4 },
-  { "name": "Золотое яблоко", "price": 60, "amount": 10 },
-  { "name": "Лук", "price": 40, "amount": 15 },
-  { "name": "Незеритовая кирка", "price": 250, "amount": 2 },
-  { "name": "Щит", "price": 75, "amount": 6 }
+  {
+    "name": "Порох",
+    "price": 20,
+    "amount": 14,
+    "image": "images/gunpowder.png"
+  },
+  {
+    "name": "Алмазный меч",
+    "price": 150,
+    "amount": 4,
+    "image": "images/diamond_sword.png"
+  }
 ]
