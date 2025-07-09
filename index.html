@@ -9,11 +9,22 @@
   <h1>🛒 Предметы в магазине сервера</h1>
   <div id="items-container"></div>
 
+  <div id="preview" class="hidden">
+    <div id="preview-content">
+      <span id="close-preview">×</span>
+      <img id="preview-img" src="" alt="предмет">
+    </div>
+  </div>
+
   <script>
     fetch("items.json")
       .then(response => response.json())
       .then(items => {
         const container = document.getElementById("items-container");
+        const preview = document.getElementById("preview");
+        const previewImg = document.getElementById("preview-img");
+        const closePreview = document.getElementById("close-preview");
+
         items.forEach(item => {
           const div = document.createElement("div");
           div.classList.add("item");
@@ -22,7 +33,16 @@
             <p>💰 Цена: <strong>${item.price}</strong> монет</p>
             <p>📦 В наличии: ${item.amount} шт</p>
           `;
+          div.addEventListener("click", () => {
+            previewImg.src = item.image;
+            preview.classList.remove("hidden");
+          });
           container.appendChild(div);
+        });
+
+        closePreview.addEventListener("click", () => {
+          preview.classList.add("hidden");
+          previewImg.src = "";
         });
       });
   </script>
